@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="box">마우스를 올려보세요.</p>
+
+    <script>
+        // mouseover -> 글씨를 orange 색으로 변경
+        // mouseout -> 글씨를 black
+
+        const box = document.querySelector("#box");
+
+        function changeColor(color) {
+            box.style.color = color;
+        };
+
+        // function changeColorToOrange() {
+        //     box.style.color = "orange";
+        // };
+        // function changeColorToBlack() {
+        //     box.style.color = "black";
+        // };
+
+        // box.addEventListener("mouseover", changeColorToOrange);
+
+
+        // box.addEventListener("mouseover", changeColorToBlack);
+
+        box.addEventListener("mouseover", () => {
+            box.style.color = "orange";
+            box.style.fontSize = "20px";
+        });
+        box.addEventListener("mouseover", () => box.style.color = "black");
+
+        // 함수를 호출하냐 실행하냐의 차이
+        // box.addEventListener("mouseover", () => changecolor("orange"));
+
+        //결론
+        //1) () => {} 형태를 보면, 함수라고 해석한다.
+        //2) addEventListener(이벤트, 함수)를 호출할 때, 두 번째 인자는 반드시 함수를 전달한다
+
+    </script>
+
+</body>
+
+</html>
